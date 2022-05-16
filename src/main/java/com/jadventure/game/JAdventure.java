@@ -1,10 +1,13 @@
 package com.jadventure.game;
 
+import java.util.Timer;
+import java.util.TimerTask;
 import com.jadventure.game.menus.MainMenu;
 
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.io.IOException;
+import java.util.TimerTask;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,9 +19,24 @@ import org.slf4j.LoggerFactory;
  * the game.
  */
 public class JAdventure {
+    int secondsPassed = 0;
+    Timer myTimer = new Timer();
+    TimerTask task = new TimerTask() {
+        @Override
+        public void run() {
+            secondsPassed++;
+            System.out.println("Seconds passed: " + secondsPassed);
+
+        }
+    };
+    public void start(){
+        myTimer.scheduleAtFixedRate(task,1000,1000);
+    }
     private static Logger logger = LoggerFactory.getLogger(JAdventure.class);
 
     public static void main(String[] args) {
+        JAdventure jAdventureProject = new JAdventure();
+        jAdventureProject.start();
         logger.info("Starting JAdventure " + toString(args));
         GameModeType mode = getGameMode(args);
         logger.debug("Starting in mode " + mode.name());
