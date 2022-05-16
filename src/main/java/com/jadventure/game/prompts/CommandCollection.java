@@ -40,12 +40,12 @@ public enum CommandCollection {
 
     private final static Map<String, String> DIRECTION_LINKS = new HashMap<>();
     static {
-        DIRECTION_LINKS.put("n", "north");
-        DIRECTION_LINKS.put("s", "south");
-        DIRECTION_LINKS.put("e", "east");
-        DIRECTION_LINKS.put("w", "west");
-        DIRECTION_LINKS.put("u", "up");
-        DIRECTION_LINKS.put("d", "down");
+        DIRECTION_LINKS.put("north", "north");
+        DIRECTION_LINKS.put("south", "south");
+        DIRECTION_LINKS.put("east", "east");
+        DIRECTION_LINKS.put("west", "west");
+        DIRECTION_LINKS.put("up", "up");
+        DIRECTION_LINKS.put("down", "down");
     }
 
     public static CommandCollection getInstance() {
@@ -58,7 +58,7 @@ public enum CommandCollection {
 
     // command methods here
 
-    @Command(command="help", aliases="h", description="Prints help", debug=false)
+    @Command(command="help", aliases="help", description="Prints help", debug=false)
     public void command_help() {
         Method[] methods = CommandCollection.class.getMethods();
         int commandWidth = 0;
@@ -109,13 +109,13 @@ public enum CommandCollection {
         }
     }
 
-    @Command(command="save", aliases={"s"}, description="Save the game", debug=false)
+    @Command(command="save", aliases={"save"}, description="Save the game", debug=false)
     public void command_save() {
         logger.info("Command 'save' is running");
         player.save();
     }
 
-    @Command(command="monster", aliases={"m", "enemy"}, description="Monsters around you", debug=false)
+    @Command(command="monster", aliases={"monsters", "enemy"}, description="Monsters around you", debug=false)
     public void command_m() {
         List<Monster> monsterList = player.getLocation().getMonsters();
         if (monsterList.size() > 0) {
@@ -130,7 +130,7 @@ public enum CommandCollection {
         }
     }
 
-    @Command(command="go", aliases={"g"}, description="Goto a direction", debug=false)
+    @Command(command="go", aliases={"go"}, description="Goto a direction", debug=false)
     public void command_g(String arg) throws DeathException {
         ILocation location = player.getLocation();
 
@@ -181,22 +181,22 @@ public enum CommandCollection {
         }
     }
 
-    @Command(command="inspect", aliases = {"i", "lookat"}, description="Inspect an item", debug=false)
+    @Command(command="inspect", aliases = {"inspect", "lookat"}, description="Inspect an item", debug=false)
     public void command_i(String arg) {
         player.inspectItem(arg.trim());
     }
 
-    @Command(command="equip", aliases= {"e"}, description="Equip an item", debug=false)
+    @Command(command="equip", aliases= {"equip"}, description="Equip an item", debug=false)
     public void command_e(String arg) {
         player.equipItem(arg.trim());
     }
 
-    @Command(command="unequip", aliases={"ue"}, description="Unequip an item", debug=false)
+    @Command(command="unequip", aliases={"unequip"}, description="Unequip an item", debug=false)
     public void command_ue(String arg) {
         player.dequipItem(arg.trim());
     }
 
-    @Command(command="view", aliases={"v"}, description="View details for 'stats', 'equipped' or 'backpack'", debug=false)
+    @Command(command="view", aliases={"view"}, description="View details for 'stats', 'equipped' or 'backpack'", debug=false)
     public void command_v(String arg) {
         arg = arg.trim();
         switch (arg) {
@@ -218,22 +218,22 @@ public enum CommandCollection {
         }
     }
 
-    @Command(command="pick", aliases={"p", "pickup"}, description="Pick up an item", debug=false)
+    @Command(command="pick", aliases={"pick", "pickup"}, description="Pick up an item", debug=false)
     public void command_p(String arg) {
         player.pickUpItem(arg.trim());
     }
 
-    @Command(command="drop", aliases={"d"}, description="Drop an item", debug=false)
+    @Command(command="drop", aliases={"drop"}, description="Drop an item", debug=false)
     public void command_d(String arg) {
         player.dropItem(arg.trim());
     }
 
-    @Command(command="attack", aliases={"a"}, description="Attacks an entity", debug=false)
+    @Command(command="attack", aliases={"attack"}, description="Attacks an entity", debug=false)
     public void command_a(String arg) throws DeathException {
         player.attack(arg.trim());
     }
 
-    @Command(command="lookaround", aliases={"la"}, description="Displays the description of the room you are in.", debug=false)
+    @Command(command="lookaround", aliases={"lookaround"}, description="Displays the description of the room you are in.", debug=false)
     public void command_la() {
         player.getLocation().print();
     }
