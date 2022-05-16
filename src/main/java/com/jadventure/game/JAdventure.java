@@ -25,7 +25,9 @@ public class JAdventure {
         @Override
         public void run() {
             secondsPassed++;
-            System.out.println("Seconds passed: " + secondsPassed);
+            if(secondsPassed == 60) {
+                System.out.println("Seconds passed: " + secondsPassed);
+            }
 
         }
     };
