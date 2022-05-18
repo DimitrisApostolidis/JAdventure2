@@ -448,7 +448,7 @@
 		"items": ["wshi1"],
 		"locationType": "CAVE",
 		"title": "First Location Ever",
-		"description": "You are in a massive empty room.",
+		"description": "You are in Thorall's room",
 		"coordinate": "0,0,-1"},
 	"1,0,-1":{
 		"danger": 0,

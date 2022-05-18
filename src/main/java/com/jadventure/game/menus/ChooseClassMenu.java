@@ -12,7 +12,6 @@ public class ChooseClassMenu extends Menus {
 
     public ChooseClassMenu() throws DeathException {
         this.menuItems.add(new MenuItem("Recruit", "A soldier newly enlisted to guard the city of Silliya"));
-        this.menuItems.add(new MenuItem("SewerRat", "A member of the underground of Silliya"));
 
         while(true) {
             QueueProvider.offer("Choose a class to get started with:");

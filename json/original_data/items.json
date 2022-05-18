@@ -96,8 +96,8 @@
     },
     "wshi1": {
       "type": "weapon",
-      "name": "shiv",
-      "description": "a small dagger",
+      "name": "knife",
+      "description": "a small knife",
       "position": "rightHand",
       "level": 1,
       "properties": {

@@ -1,7 +1,7 @@
 {
   "npcs": {
     "guide": {
-      "name": "Guide",
+      "name": "Thorall",
       "health":100,
       "healthMax": 100,
       "damage": 1000,
@@ -45,8 +45,8 @@
         },        
 	{
           "condition": "char type=Recruit",
-          "player":"Where should I go?",
-          "text":"Hurry upstairs! This is no place for you and I'm sure your superiors will be wondering where you are.",
+          "player":"Where should we go?",
+          "text":"Go away! This is no place for us and I'm sure our superiors will be wondering where we are.Let's leave!!!",
           "response":[4,5],
           "action": "none"
         },
@@ -312,7 +312,8 @@
           "rightHand": "hands"
         }
       ],
-      "intro": "Hey... you alive?\n*You let out a groan...*\nHey, mate, you need to wake up. The guards will be coming 'round soon, and they put a spear through the last guy they found still asleep.\n*Slowly, you sit up.*\nThat's the way! I'm going to head back up. Follow me as soon as you can.\nBy the way, I'm Thorall. What's your name?",
+      "intro": "Monsters are invading the city of Silliya from the mountains in the north.\n It is unknown why they are attacking.\n The governor of Silliya has implemented a draft calling all able-bodied men to start fighting the monsters.\nYou were drafted to the city guard to help fight the monsters, but you fell asleep in a cave that you found under the wall of the city.\n Another soldier found you and woke you up.\n A new wave of monsters is attacking the wall and you are needed to help fight.\n\n\n1 -Hey... you alive?\n*You let out a groan...*\nHey, mate, you need to wake up. The guards will be coming 'round soon, and they put a spear through the last guy they found still asleep.\n*Slowly, you sit up.*\nThat's the way! I'm going to head back up. Follow me as soon as you can.\nBy the way, I'm Thorall. What's your name?",
+
       "allies": [
       	"Recruit"
       ],
