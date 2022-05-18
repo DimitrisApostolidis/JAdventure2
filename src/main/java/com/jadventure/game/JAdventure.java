@@ -12,12 +12,7 @@ import java.util.TimerTask;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * This is the starting point of the game.
- * This class doesn't do much more than create
- * a new MainMenu that will handle the rest of
- * the game.
- */
+
 public class JAdventure {
     int secondsPassed = 0;
     Timer myTimer = new Timer();
@@ -27,6 +22,10 @@ public class JAdventure {
             secondsPassed++;
             if(secondsPassed == 60) {
                 System.out.println("Seconds passed: " + secondsPassed);
+            }
+            if (secondsPassed == 12){
+                System.out.println("Game over");
+                System.exit(0);
             }
 
         }
